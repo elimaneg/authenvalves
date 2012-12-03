@@ -52,9 +52,9 @@ public class TestAuthenticator
             return true;
          }
          Realm realm  = request.getContext().getRealm();
-         principal = realm.authenticate("admin", "admin");
-         System.out.println("New Principal is : " + principal);
+         principal = realm.authenticate("admin", "toto");
          if (principal != null) {
+             request.setUserPrincipal(principal);
              return true;
          }
          return false;
